@@ -1,8 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import Dummy from "../components/dummy";
 import styles from "../styles/Home.module.css";
+import styles1 from "../styles/Home1.module.css";
+
+import styles2 from "../styles/Home2.module.css";
 
 export default function Home() {
+  // console.log(styles);
   return (
     <div className={styles.container}>
       <Head>
@@ -12,18 +18,27 @@ export default function Home() {
       </Head>
       <nav className={styles.mainnav}>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Blog</li>
-          <li>Contact</li>
+          <Link href="/">
+            <li>Home</li>
+          </Link>
+          <Link href="/about">
+            <li>About</li>
+          </Link>
+          <Link href="/blog">
+            <li>Blog</li>
+          </Link>
+          <Link href="/contact">
+            <li>Contact</li>
+          </Link>
         </ul>
       </nav>
+      <Dummy />
       <main className={styles.main}>
         <h1 className={styles.title}>LearningNext</h1>
 
         <p className={styles.description}>A blog for the new developer</p>
 
-        <div className="blogs">
+        <div className="dummy">
           <h2>Popular Blogs</h2>
           <div className="blogItem">
             <h3>How to learn Javascript in 2022?</h3>
