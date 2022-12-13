@@ -2,6 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import styles1 from "../styles/Home1.module.css";
+
+import styles2 from "../styles/Home2.module.css";
 
 export default function Home() {
   return (
@@ -32,7 +35,7 @@ export default function Home() {
 
         <p className={styles.description}>A blog for the new developer</p>
 
-        <div className="blogs">
+        <div className={styles2.check}>
           <h2>Popular Blogs</h2>
           <div className="blogItem">
             <h3>How to learn Javascript in 2022?</h3>
