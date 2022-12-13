@@ -7,6 +7,7 @@ import styles1 from "../styles/Home1.module.css";
 import styles2 from "../styles/Home2.module.css";
 
 export default function Home() {
+  console.log(styles);
   return (
     <div className={styles.container}>
       <Head>
