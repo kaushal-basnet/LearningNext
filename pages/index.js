@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Dummy from "../components/dummy";
 import styles from "../styles/Home.module.css";
 import styles1 from "../styles/Home1.module.css";
 
@@ -31,12 +32,13 @@ export default function Home() {
           </Link>
         </ul>
       </nav>
+      <Dummy />
       <main className={styles.main}>
         <h1 className={styles.title}>LearningNext</h1>
 
         <p className={styles.description}>A blog for the new developer</p>
 
-        <div className={styles2.check}>
+        <div className="dummy">
           <h2>Popular Blogs</h2>
           <div className="blogItem">
             <h3>How to learn Javascript in 2022?</h3>
