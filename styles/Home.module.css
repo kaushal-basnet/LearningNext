@@ -99,12 +99,12 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   .card,
@@ -129,4 +129,10 @@
   margin: 0px 24px;
   list-style: none;
   font-weight: bold;
+}
+.dummy h2 {
+  font-size: 38px;
+}
+.dummy h3 {
+  font-size: 28px;
 }
