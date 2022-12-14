@@ -130,3 +130,9 @@
   list-style: none;
   font-weight: bold;
 }
+.dummy h2 {
+  font-size: 38px;
+}
+.dummy h3 {
+  font-size: 28px;
+}
