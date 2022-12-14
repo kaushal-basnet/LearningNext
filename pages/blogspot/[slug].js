@@ -1,6 +1,10 @@
 import { useRouter } from "next/router";
 import React from "react";
 import styles from "../../styles/Blog.module.css";
+
+// for accessing blogdata data
+// Step 3: find the file corresponding to the slug
+// Step 4: Populate them inside the page
 const Post = () => {
   const router = useRouter();
   const { slug } = router.query;
