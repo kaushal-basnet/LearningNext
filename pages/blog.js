@@ -5,33 +5,23 @@ import styles from "../styles/Blog.module.css";
 // for accessing blogdata data
 // Step 1: Read/Collect all the files from blogspot directory
 // Step 2: Iterate and display them
-const Blog = () => {
-  // step 4: store parsed data
-  const [blogs, setblogs] = useState([]);
-  // step 3: render api data from blogs
-  useEffect(() => {
-    fetch("http://localhost:3001/api/blogs")
-      .then((parse) => {
-        // fetched data and return data with json parse
-        return parse.json();
-      })
-      .then((parsedData) => {
-
-        setblogs(parsedData);
-      });
-  }, []);
+const Blog = (props) => {
+  console.log(props);
+  const [blogs, setblogs] = useState(props.allBlogs);
 
   return (
     <main className={styles.main}>
       <div className={styles.dummy}>
-        {/* step 5: Iterate api data  */}
         {blogs.map((data) => (
-          <div  key={data.author}>
+          <div key={data.author}>
             <Link href={`/blogspot/${data.slug}`}>
               <h3>{data.title}</h3>
             </Link>
             <p>
-              {data.content.substr(0, 150)}...<a href="/" className={styles.readMore}>Read more.</a>
+              {data.content.substr(0, 150)}...
+              <a href="/" className={styles.readMore}>
+                Read more.
+              </a>
             </p>
           </div>
         ))}
@@ -39,4 +29,12 @@ const Blog = () => {
     </main>
   );
 };
+export async function getServerSideProps(context) {
+  let data = await fetch("http://localhost:3001/api/blogs");
+  let allBlogs = await data.json();
+
+  return {
+    props: { allBlogs },
+  };
+}
 export default Blog;

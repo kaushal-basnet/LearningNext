@@ -5,22 +5,10 @@ import styles from "../../styles/Blog.module.css";
 // for accessing blogblog data
 // Step 3: find the file corresponding to the slug
 // Step 4: Populate them inside the page
-const Post = () => {
-  const [blog, setblog] = useState([]);
+const Post = (props) => {
+  const [blog, setblog] = useState(props.myBlog);
   const router = useRouter();
 
-  useEffect(() => {
-    if (!router.isReady) return;
-    const { slug } = router.query;
-    fetch(`http://localhost:3001/api/getblogs?slug=${slug}`)
-      .then((parse) => {
-        return parse.json();
-      })
-      .then((parsed) => {
-        setblog(parsed);
-      });
-  }, [router.isReady]);
-  console.log(blog);
   return (
     <main className={styles.main}>
       <div className={styles.dummy} key={blog.slug}>
@@ -31,4 +19,14 @@ const Post = () => {
     </main>
   );
 };
+export async function getServerSideProps(context) {
+  console.log(context);
+  const { slug } = context.query;
+  let data = await fetch(`http://localhost:3001/api/getblogs?slug=${slug}`);
+  let myBlog = await data.json();
+
+  return {
+    props: { myBlog },
+  };
+}
 export default Post;
