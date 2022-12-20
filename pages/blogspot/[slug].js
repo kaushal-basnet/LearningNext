@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/Blog.module.css";
+import * as fs from "node:fs";
 
 // for accessing blogblog data
 // Step 3: find the file corresponding to the slug
@@ -19,14 +20,23 @@ const Post = (props) => {
     </main>
   );
 };
-export async function getServerSideProps(context) {
-  console.log(context);
-  const { slug } = context.query;
-  let data = await fetch(`http://localhost:3001/api/getblogs?slug=${slug}`);
-  let myBlog = await data.json();
-
+export async function getStaticPaths() {
   return {
-    props: { myBlog },
+    paths: [
+      { params: { slug: "learn-flask" } },
+      { params: { slug: "learn-js" } },
+      { params: { slug: "learn-next" } },
+    ],
+    // { fallback: false } means other routes should 404
+    fallback: false, // can also be false or 'blocking'
+  };
+}
+export async function getStaticProps(context) {
+  const { slug } = context.params;
+  let myBlog = await fs.promises.readFile(`blogdata/${slug}.json`, "utf-8");
+  console.log(myBlog, "myblog");
+  return {
+    props: { myBlog: JSON.parse(myBlog) },
   };
 }
 export default Post;
