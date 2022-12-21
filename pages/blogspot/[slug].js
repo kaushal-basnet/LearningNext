@@ -9,13 +9,16 @@ import * as fs from "node:fs";
 const Post = (props) => {
   const [blog, setblog] = useState(props.myBlog);
   const router = useRouter();
+  function createMarkup(contents) {
+    return { __html: contents };
+  }
 
   return (
     <main className={styles.main}>
       <div className={styles.dummy} key={blog.slug}>
         <h2>Title of the page: {blog && blog.title}</h2>
         <hr />
-        <p>{blog && blog.content}</p>
+        {blog && <p dangerouslySetInnerHTML={createMarkup(blog.content)} />}
       </div>
     </main>
   );
