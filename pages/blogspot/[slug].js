@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug } = context.params;
   let myBlog = await fs.promises.readFile(`blogdata/${slug}.json`, "utf-8");
-  console.log(myBlog, "myblog");
+  // console.log(myBlog, "myblog");
   return {
     props: { myBlog: JSON.parse(myBlog) },
   };
