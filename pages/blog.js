@@ -7,7 +7,7 @@ import * as fs from "node:fs";
 // Step 1: Read/Collect all the files from blogspot directory
 // Step 2: Iterate and display them
 const Blog = (props) => {
-  console.log(props);
+  // console.log(props);
   const [blogs, setblogs] = useState(props.allBlogs);
 
   return (
