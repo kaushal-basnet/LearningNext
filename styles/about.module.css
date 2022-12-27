@@ -1,0 +1,12 @@
+.container {
+  margin: 45px auto;
+  width: 45vw;
+}
+.container h2 {
+  display: flex;
+  justify-content: center;
+  margin: 75px 0px;
+}
+.container ol {
+  list-style-type: lower-alpha;
+}
