@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 50%;
+}
+.form label {
+  display: flex;
+  padding-bottom: 5px;
+  font-size: larger;
+  font-weight: bold;
+}
+.form input {
+  height: 40px;
+  width: 100%;
+}
+.form textarea {
+  height: 200px;
+  width: 100%;
+}
+.form button {
+  height: 50px;
+  width: 50%;
+}
