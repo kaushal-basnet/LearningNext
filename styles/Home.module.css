@@ -130,6 +130,10 @@
   list-style: none;
   font-weight: bold;
 }
+.mainnav ul li:hover {
+  color: #091320;
+  font-weight: bolder;
+}
 .dummy h2 {
   font-size: 38px;
 }

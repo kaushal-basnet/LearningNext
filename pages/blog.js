@@ -19,7 +19,7 @@ const Blog = (props) => {
               <h3>{data.title}</h3>
             </Link>
             <p>
-              {data.metadesc.substr(0, 150)}...
+              {data.metadesc.substr(0, 250)}...
               <Link href={`/blogspot/${data.slug}`} className={styles.readMore}>
                 Read more.
               </Link>
