@@ -7,7 +7,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 // Step 1: Read/Collect all the files from blogspot directory
 // Step 2: Iterate and display them
 const Blog = (props) => {
-  // console.log(props);
   const [blogs, setblogs] = useState(props.allBlogs);
   const [count, setcount] = useState(2);
   const fetchData = async () => {

@@ -35,7 +35,6 @@ export default function Home() {
             <h3>How to learn Javascript in 2022?</h3>
             <p>Javascript is the language used to design logic for the web.</p>
           </div>
-          p
         </div>
       </main>
 

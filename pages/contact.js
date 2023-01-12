@@ -26,14 +26,13 @@ const Contact = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
         setemail("");
         setdesc("");
         setpassword("");
         setusername("");
       })
       .catch((error) => {
-        console.error("Error:", error);
+        <p>Error...</p>;
       });
   };
   const onHandleChange = (e) => {
@@ -71,9 +70,9 @@ const Contact = () => {
           />
         </div>
         <div>
-          <label>Password</label>
+          <label>Phone</label>
           <input
-            type="password"
+            type="phone"
             name="password"
             value={password}
             onChange={onHandleChange}

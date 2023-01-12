@@ -18,7 +18,7 @@ const Post = (props) => {
       <div className={styles.dummy} key={blog.slug}>
         <h2>Title of the page: {blog && blog.title}</h2>
         <hr />
-        {blog && <p dangerouslySetInnerHTML={createMarkup(blog.content)} />}
+        {blog && <div dangerouslySetInnerHTML={createMarkup(blog.content)} />}
       </div>
     </main>
   );
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug } = context.params;
   let myBlog = await fs.promises.readFile(`blogdata/${slug}.json`, "utf-8");
-  // console.log(myBlog, "myblog");
+
   return {
     props: { myBlog: JSON.parse(myBlog) },
   };
