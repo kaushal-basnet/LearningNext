@@ -26,5 +26,14 @@
 }
 .form button {
   height: 50px;
-  width: 50%;
+  width: 30%;
+  font-size: 20px;
+}
+@media only screen and (max-width: 600px) {
+  .form {
+    width: 90%;
+  }
+  .form input {
+    font-size: 20px;
+  }
 }

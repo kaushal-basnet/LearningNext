@@ -129,6 +129,7 @@
   margin: 0px 24px;
   list-style: none;
   font-weight: bold;
+  font-size: 32px;
 }
 .mainnav ul li:hover {
   color: #091320;
@@ -139,4 +140,12 @@
 }
 .dummy h3 {
   font-size: 28px;
+}
+@media only screen and (max-width: 600px) {
+  .mainnav ul li {
+    font-size: 22px;
+  }
+  .title {
+    font-size: 3rem;
+  }
 }

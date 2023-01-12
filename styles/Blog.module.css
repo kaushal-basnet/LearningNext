@@ -24,3 +24,14 @@
   padding: 2px;
   border-radius: 5%;
 }
+@media only screen and (max-width: 600px) {
+  .main {
+    width: 92vw;
+  }
+  .dummy {
+    width: 92vw;
+  }
+  .content {
+    color: aquamarine;
+  }
+}
